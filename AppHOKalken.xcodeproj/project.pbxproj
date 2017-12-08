@@ -7,21 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6805BE921FDB2C8A00416AB4 /* SpelerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6805BE911FDB2C8A00416AB4 /* SpelerCell.swift */; };
+		6805BE941FDB2CAE00416AB4 /* Speler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6805BE931FDB2CAE00416AB4 /* Speler.swift */; };
+		6805BE981FDB2CC200416AB4 /* Ploeg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6805BE971FDB2CC200416AB4 /* Ploeg.swift */; };
+		6805BE9A1FDB310100416AB4 /* SpelersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6805BE991FDB310100416AB4 /* SpelersViewController.swift */; };
+		6805BE9C1FDB3DCC00416AB4 /* AddSpelerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6805BE9B1FDB3DCC00416AB4 /* AddSpelerViewController.swift */; };
+		6834284A1FB47DE8003BBD1B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683428491FB47DE8003BBD1B /* MenuViewController.swift */; };
+		68B984161FD48E9300E863EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68B984151FD48E9300E863EC /* GoogleService-Info.plist */; };
+		68B984171FD4927300E863EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 681B81FA1FC8B5EE00DF3870 /* Assets.xcassets */; };
+		68B984191FD49F2400E863EC /* KaartenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B984181FD49F2400E863EC /* KaartenViewController.swift */; };
 		68BAA8E11FB3A53D00D22246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BAA8E01FB3A53D00D22246 /* AppDelegate.swift */; };
 		68BAA8E31FB3A53D00D22246 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BAA8E21FB3A53D00D22246 /* ViewController.swift */; };
 		68BAA8E61FB3A53D00D22246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68BAA8E41FB3A53D00D22246 /* Main.storyboard */; };
-		68BAA8E81FB3A53D00D22246 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68BAA8E71FB3A53D00D22246 /* Assets.xcassets */; };
 		68BAA8EB1FB3A53D00D22246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68BAA8E91FB3A53D00D22246 /* LaunchScreen.storyboard */; };
+		FCD5C5480F9326EFFBD1048D /* Pods_AppHOKalken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C2B2165F845BF51C42014C /* Pods_AppHOKalken.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6805BE911FDB2C8A00416AB4 /* SpelerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpelerCell.swift; sourceTree = "<group>"; };
+		6805BE931FDB2CAE00416AB4 /* Speler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speler.swift; sourceTree = "<group>"; };
+		6805BE971FDB2CC200416AB4 /* Ploeg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ploeg.swift; sourceTree = "<group>"; };
+		6805BE991FDB310100416AB4 /* SpelersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpelersViewController.swift; sourceTree = "<group>"; };
+		6805BE9B1FDB3DCC00416AB4 /* AddSpelerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpelerViewController.swift; sourceTree = "<group>"; };
+		681B81FA1FC8B5EE00DF3870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/ilias/Documents/Cursussen & documenten/iOS/AppHOKalken/AppHOKalken/Assets.xcassets"; sourceTree = "<absolute>"; };
+		683428491FB47DE8003BBD1B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		68B984151FD48E9300E863EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		68B984181FD49F2400E863EC /* KaartenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaartenViewController.swift; sourceTree = "<group>"; };
 		68BAA8DD1FB3A53D00D22246 /* AppHOKalken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppHOKalken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68BAA8E01FB3A53D00D22246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68BAA8E21FB3A53D00D22246 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		68BAA8E51FB3A53D00D22246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		68BAA8E71FB3A53D00D22246 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68BAA8EA1FB3A53D00D22246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68BAA8EC1FB3A53D00D22246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74C2B2165F845BF51C42014C /* Pods_AppHOKalken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppHOKalken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D933A1E8CFBE96AA0BC5962 /* Pods-AppHOKalken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppHOKalken.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppHOKalken/Pods-AppHOKalken.debug.xcconfig"; sourceTree = "<group>"; };
+		B32347B734A82AB4A4C090B6 /* Pods-AppHOKalken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppHOKalken.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppHOKalken/Pods-AppHOKalken.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +49,57 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD5C5480F9326EFFBD1048D /* Pods_AppHOKalken.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		090E6F6325C76F2E44C31128 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74C2B2165F845BF51C42014C /* Pods_AppHOKalken.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6805BE901FDB2C7D00416AB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6805BE911FDB2C8A00416AB4 /* SpelerCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		683428471FB47DD0003BBD1B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				683428491FB47DE8003BBD1B /* MenuViewController.swift */,
+				68B984181FD49F2400E863EC /* KaartenViewController.swift */,
+				6805BE991FDB310100416AB4 /* SpelersViewController.swift */,
+				6805BE9B1FDB3DCC00416AB4 /* AddSpelerViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		683428481FB47DD7003BBD1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6805BE931FDB2CAE00416AB4 /* Speler.swift */,
+				6805BE971FDB2CC200416AB4 /* Ploeg.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		68BAA8D41FB3A53D00D22246 = {
 			isa = PBXGroup;
 			children = (
+				68B984151FD48E9300E863EC /* GoogleService-Info.plist */,
 				68BAA8DF1FB3A53D00D22246 /* AppHOKalken */,
 				68BAA8DE1FB3A53D00D22246 /* Products */,
+				6D1465BE638F11A5AB52FC42 /* Pods */,
+				090E6F6325C76F2E44C31128 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +114,26 @@
 		68BAA8DF1FB3A53D00D22246 /* AppHOKalken */ = {
 			isa = PBXGroup;
 			children = (
+				6805BE901FDB2C7D00416AB4 /* Views */,
+				683428481FB47DD7003BBD1B /* Model */,
+				683428471FB47DD0003BBD1B /* ViewControllers */,
 				68BAA8E01FB3A53D00D22246 /* AppDelegate.swift */,
-				68BAA8E21FB3A53D00D22246 /* ViewController.swift */,
-				68BAA8E41FB3A53D00D22246 /* Main.storyboard */,
-				68BAA8E71FB3A53D00D22246 /* Assets.xcassets */,
-				68BAA8E91FB3A53D00D22246 /* LaunchScreen.storyboard */,
 				68BAA8EC1FB3A53D00D22246 /* Info.plist */,
+				681B81FA1FC8B5EE00DF3870 /* Assets.xcassets */,
+				68BAA8E91FB3A53D00D22246 /* LaunchScreen.storyboard */,
+				68BAA8E41FB3A53D00D22246 /* Main.storyboard */,
+				68BAA8E21FB3A53D00D22246 /* ViewController.swift */,
 			);
 			path = AppHOKalken;
+			sourceTree = "<group>";
+		};
+		6D1465BE638F11A5AB52FC42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D933A1E8CFBE96AA0BC5962 /* Pods-AppHOKalken.debug.xcconfig */,
+				B32347B734A82AB4A4C090B6 /* Pods-AppHOKalken.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68BAA8EF1FB3A53D00D22246 /* Build configuration list for PBXNativeTarget "AppHOKalken" */;
 			buildPhases = (
+				3B393B4C6D3FB311384BFF61 /* [CP] Check Pods Manifest.lock */,
 				68BAA8D91FB3A53D00D22246 /* Sources */,
 				68BAA8DA1FB3A53D00D22246 /* Frameworks */,
 				68BAA8DB1FB3A53D00D22246 /* Resources */,
+				4BAD9371F18FC7EA41B5A7E6 /* [CP] Embed Pods Frameworks */,
+				0C669EE5E5FC397F4C5C701A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +171,7 @@
 				TargetAttributes = {
 					68BAA8DC1FB3A53D00D22246 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -123,21 +198,85 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B984171FD4927300E863EC /* Assets.xcassets in Resources */,
 				68BAA8EB1FB3A53D00D22246 /* LaunchScreen.storyboard in Resources */,
-				68BAA8E81FB3A53D00D22246 /* Assets.xcassets in Resources */,
 				68BAA8E61FB3A53D00D22246 /* Main.storyboard in Resources */,
+				68B984161FD48E9300E863EC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C669EE5E5FC397F4C5C701A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppHOKalken/Pods-AppHOKalken-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B393B4C6D3FB311384BFF61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppHOKalken-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BAD9371F18FC7EA41B5A7E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AppHOKalken/Pods-AppHOKalken-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppHOKalken/Pods-AppHOKalken-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		68BAA8D91FB3A53D00D22246 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6805BE9C1FDB3DCC00416AB4 /* AddSpelerViewController.swift in Sources */,
 				68BAA8E31FB3A53D00D22246 /* ViewController.swift in Sources */,
+				6834284A1FB47DE8003BBD1B /* MenuViewController.swift in Sources */,
+				6805BE941FDB2CAE00416AB4 /* Speler.swift in Sources */,
+				6805BE9A1FDB310100416AB4 /* SpelersViewController.swift in Sources */,
 				68BAA8E11FB3A53D00D22246 /* AppDelegate.swift in Sources */,
+				68B984191FD49F2400E863EC /* KaartenViewController.swift in Sources */,
+				6805BE921FDB2C8A00416AB4 /* SpelerCell.swift in Sources */,
+				6805BE981FDB2CC200416AB4 /* Ploeg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,13 +411,17 @@
 		};
 		68BAA8F01FB3A53D00D22246 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D933A1E8CFBE96AA0BC5962 /* Pods-AppHOKalken.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppHOKalken/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = be.ivanwassenhove.AppHOKalken;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,13 +429,17 @@
 		};
 		68BAA8F11FB3A53D00D22246 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B32347B734A82AB4A4C090B6 /* Pods-AppHOKalken.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppHOKalken/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = be.ivanwassenhove.AppHOKalken;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

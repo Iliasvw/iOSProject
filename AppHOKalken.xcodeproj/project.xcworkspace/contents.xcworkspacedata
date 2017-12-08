@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/ilias/Documents/Cursussen &amp; documenten/iOS/AppHOKalken/AppHOKalken/Assets.xcassets">
+   </FileRef>
+   <FileRef
       location = "self:AppHOKalken.xcodeproj">
    </FileRef>
 </Workspace>
