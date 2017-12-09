@@ -20,6 +20,12 @@
 		68BAA8E31FB3A53D00D22246 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BAA8E21FB3A53D00D22246 /* ViewController.swift */; };
 		68BAA8E61FB3A53D00D22246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68BAA8E41FB3A53D00D22246 /* Main.storyboard */; };
 		68BAA8EB1FB3A53D00D22246 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68BAA8E91FB3A53D00D22246 /* LaunchScreen.storyboard */; };
+		68C3ADFA1FDBE66800CC44D4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C3ADF91FDBE66800CC44D4 /* LoginViewController.swift */; };
+		68C3ADFE1FDBE6BD00CC44D4 /* AddTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C3ADFD1FDBE6BD00CC44D4 /* AddTeamViewController.swift */; };
+		68C3AE001FDBEAA900CC44D4 /* Kaart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C3ADFF1FDBEAA900CC44D4 /* Kaart.swift */; };
+		68C3AE021FDBEB0000CC44D4 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C3AE011FDBEB0000CC44D4 /* Goal.swift */; };
+		68C3AE041FDBF19900CC44D4 /* SpelerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C3AE031FDBF19900CC44D4 /* SpelerInfoViewController.swift */; };
+		68C3AE061FDBF95700CC44D4 /* KaartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C3AE051FDBF95700CC44D4 /* KaartCell.swift */; };
 		FCD5C5480F9326EFFBD1048D /* Pods_AppHOKalken.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C2B2165F845BF51C42014C /* Pods_AppHOKalken.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +45,12 @@
 		68BAA8E51FB3A53D00D22246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68BAA8EA1FB3A53D00D22246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68BAA8EC1FB3A53D00D22246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68C3ADF91FDBE66800CC44D4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		68C3ADFD1FDBE6BD00CC44D4 /* AddTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamViewController.swift; sourceTree = "<group>"; };
+		68C3ADFF1FDBEAA900CC44D4 /* Kaart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaart.swift; sourceTree = "<group>"; };
+		68C3AE011FDBEB0000CC44D4 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		68C3AE031FDBF19900CC44D4 /* SpelerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpelerInfoViewController.swift; sourceTree = "<group>"; };
+		68C3AE051FDBF95700CC44D4 /* KaartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaartCell.swift; sourceTree = "<group>"; };
 		74C2B2165F845BF51C42014C /* Pods_AppHOKalken.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppHOKalken.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D933A1E8CFBE96AA0BC5962 /* Pods-AppHOKalken.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppHOKalken.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppHOKalken/Pods-AppHOKalken.debug.xcconfig"; sourceTree = "<group>"; };
 		B32347B734A82AB4A4C090B6 /* Pods-AppHOKalken.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppHOKalken.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppHOKalken/Pods-AppHOKalken.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				6805BE911FDB2C8A00416AB4 /* SpelerCell.swift */,
+				68C3AE051FDBF95700CC44D4 /* KaartCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -79,6 +92,9 @@
 				68B984181FD49F2400E863EC /* KaartenViewController.swift */,
 				6805BE991FDB310100416AB4 /* SpelersViewController.swift */,
 				6805BE9B1FDB3DCC00416AB4 /* AddSpelerViewController.swift */,
+				68C3ADF91FDBE66800CC44D4 /* LoginViewController.swift */,
+				68C3ADFD1FDBE6BD00CC44D4 /* AddTeamViewController.swift */,
+				68C3AE031FDBF19900CC44D4 /* SpelerInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -88,6 +104,8 @@
 			children = (
 				6805BE931FDB2CAE00416AB4 /* Speler.swift */,
 				6805BE971FDB2CC200416AB4 /* Ploeg.swift */,
+				68C3ADFF1FDBEAA900CC44D4 /* Kaart.swift */,
+				68C3AE011FDBEB0000CC44D4 /* Goal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,13 +287,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6805BE9C1FDB3DCC00416AB4 /* AddSpelerViewController.swift in Sources */,
+				68C3AE041FDBF19900CC44D4 /* SpelerInfoViewController.swift in Sources */,
 				68BAA8E31FB3A53D00D22246 /* ViewController.swift in Sources */,
+				68C3ADFE1FDBE6BD00CC44D4 /* AddTeamViewController.swift in Sources */,
 				6834284A1FB47DE8003BBD1B /* MenuViewController.swift in Sources */,
 				6805BE941FDB2CAE00416AB4 /* Speler.swift in Sources */,
 				6805BE9A1FDB310100416AB4 /* SpelersViewController.swift in Sources */,
 				68BAA8E11FB3A53D00D22246 /* AppDelegate.swift in Sources */,
 				68B984191FD49F2400E863EC /* KaartenViewController.swift in Sources */,
+				68C3AE021FDBEB0000CC44D4 /* Goal.swift in Sources */,
 				6805BE921FDB2C8A00416AB4 /* SpelerCell.swift in Sources */,
+				68C3AE001FDBEAA900CC44D4 /* Kaart.swift in Sources */,
+				68C3ADFA1FDBE66800CC44D4 /* LoginViewController.swift in Sources */,
+				68C3AE061FDBF95700CC44D4 /* KaartCell.swift in Sources */,
 				6805BE981FDB2CC200416AB4 /* Ploeg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

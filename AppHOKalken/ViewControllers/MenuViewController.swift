@@ -16,4 +16,17 @@ class MenuViewController: UIViewController {
         statisticsButton.layer.cornerRadius = 10
         naamLabel.text = "\(speler.naam), \(speler.voornaam)"
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+            case "showInfoSpeler"?:
+                let infoController = segue.destination as! SpelerInfoViewController
+                infoController.speler = speler
+            case "showKaarten"?:
+                let kaartenController = segue.destination as! KaartenViewController
+                kaartenController.kaarten = speler.kaarten
+            default:
+                fatalError("No segue found")
+        }
+    }
 }

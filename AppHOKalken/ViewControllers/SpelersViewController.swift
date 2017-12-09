@@ -9,6 +9,13 @@ class SpelersViewController: UIViewController {
     
     override func viewDidLoad() {
         self.teamnaam.text = "KFC HO Kalken"
+        for i in 0...10 {
+            if i % 2 == 0 {
+                spelers[0].addKaart(kaart: Kaart(kaartType: .g, datum: Date(), omschrijving: "redelijke fout"))
+            } else {
+                spelers[0].addKaart(kaart: Kaart(kaartType: .r, datum: Date(), omschrijving: "Vuile fout"))
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
