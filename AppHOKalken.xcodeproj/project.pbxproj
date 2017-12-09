@@ -12,7 +12,12 @@
 		6805BE981FDB2CC200416AB4 /* Ploeg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6805BE971FDB2CC200416AB4 /* Ploeg.swift */; };
 		6805BE9A1FDB310100416AB4 /* SpelersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6805BE991FDB310100416AB4 /* SpelersViewController.swift */; };
 		6805BE9C1FDB3DCC00416AB4 /* AddSpelerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6805BE9B1FDB3DCC00416AB4 /* AddSpelerViewController.swift */; };
+		6818DF021FDC6FD0001675DC /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6818DF011FDC6FD0001675DC /* GoalsViewController.swift */; };
+		6818DF041FDC71E6001675DC /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6818DF031FDC71E6001675DC /* GoalCell.swift */; };
+		6818DF061FDC7DD1001675DC /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6818DF051FDC7DD1001675DC /* AddGoalViewController.swift */; };
+		6818DF081FDC8852001675DC /* GrafiekenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6818DF071FDC8852001675DC /* GrafiekenViewController.swift */; };
 		6834284A1FB47DE8003BBD1B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683428491FB47DE8003BBD1B /* MenuViewController.swift */; };
+		689601361FDC663F00710A2C /* AddKaartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689601351FDC663F00710A2C /* AddKaartViewController.swift */; };
 		68B984161FD48E9300E863EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68B984151FD48E9300E863EC /* GoogleService-Info.plist */; };
 		68B984171FD4927300E863EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 681B81FA1FC8B5EE00DF3870 /* Assets.xcassets */; };
 		68B984191FD49F2400E863EC /* KaartenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B984181FD49F2400E863EC /* KaartenViewController.swift */; };
@@ -35,8 +40,13 @@
 		6805BE971FDB2CC200416AB4 /* Ploeg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ploeg.swift; sourceTree = "<group>"; };
 		6805BE991FDB310100416AB4 /* SpelersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpelersViewController.swift; sourceTree = "<group>"; };
 		6805BE9B1FDB3DCC00416AB4 /* AddSpelerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpelerViewController.swift; sourceTree = "<group>"; };
+		6818DF011FDC6FD0001675DC /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		6818DF031FDC71E6001675DC /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
+		6818DF051FDC7DD1001675DC /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
+		6818DF071FDC8852001675DC /* GrafiekenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrafiekenViewController.swift; sourceTree = "<group>"; };
 		681B81FA1FC8B5EE00DF3870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/ilias/Documents/Cursussen & documenten/iOS/AppHOKalken/AppHOKalken/Assets.xcassets"; sourceTree = "<absolute>"; };
 		683428491FB47DE8003BBD1B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		689601351FDC663F00710A2C /* AddKaartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKaartViewController.swift; sourceTree = "<group>"; };
 		68B984151FD48E9300E863EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		68B984181FD49F2400E863EC /* KaartenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaartenViewController.swift; sourceTree = "<group>"; };
 		68BAA8DD1FB3A53D00D22246 /* AppHOKalken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppHOKalken.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +91,7 @@
 			children = (
 				6805BE911FDB2C8A00416AB4 /* SpelerCell.swift */,
 				68C3AE051FDBF95700CC44D4 /* KaartCell.swift */,
+				6818DF031FDC71E6001675DC /* GoalCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -95,6 +106,10 @@
 				68C3ADF91FDBE66800CC44D4 /* LoginViewController.swift */,
 				68C3ADFD1FDBE6BD00CC44D4 /* AddTeamViewController.swift */,
 				68C3AE031FDBF19900CC44D4 /* SpelerInfoViewController.swift */,
+				689601351FDC663F00710A2C /* AddKaartViewController.swift */,
+				6818DF011FDC6FD0001675DC /* GoalsViewController.swift */,
+				6818DF051FDC7DD1001675DC /* AddGoalViewController.swift */,
+				6818DF071FDC8852001675DC /* GrafiekenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -288,6 +303,9 @@
 			files = (
 				6805BE9C1FDB3DCC00416AB4 /* AddSpelerViewController.swift in Sources */,
 				68C3AE041FDBF19900CC44D4 /* SpelerInfoViewController.swift in Sources */,
+				6818DF061FDC7DD1001675DC /* AddGoalViewController.swift in Sources */,
+				689601361FDC663F00710A2C /* AddKaartViewController.swift in Sources */,
+				6818DF021FDC6FD0001675DC /* GoalsViewController.swift in Sources */,
 				68BAA8E31FB3A53D00D22246 /* ViewController.swift in Sources */,
 				68C3ADFE1FDBE6BD00CC44D4 /* AddTeamViewController.swift in Sources */,
 				6834284A1FB47DE8003BBD1B /* MenuViewController.swift in Sources */,
@@ -298,6 +316,8 @@
 				68C3AE021FDBEB0000CC44D4 /* Goal.swift in Sources */,
 				6805BE921FDB2C8A00416AB4 /* SpelerCell.swift in Sources */,
 				68C3AE001FDBEAA900CC44D4 /* Kaart.swift in Sources */,
+				6818DF081FDC8852001675DC /* GrafiekenViewController.swift in Sources */,
+				6818DF041FDC71E6001675DC /* GoalCell.swift in Sources */,
 				68C3ADFA1FDBE66800CC44D4 /* LoginViewController.swift in Sources */,
 				68C3AE061FDBF95700CC44D4 /* KaartCell.swift in Sources */,
 				6805BE981FDB2CC200416AB4 /* Ploeg.swift in Sources */,

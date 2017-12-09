@@ -2,21 +2,38 @@ import UIKit
 
 class KaartenViewController: UIViewController {
     
-    var kaarten: [Kaart]!
+    var speler: Speler!
     private var indexPathToEdit: IndexPath!
     @IBOutlet weak var tableView: UITableView!
     
-    @IBAction func unwindFromKaarten(_ segue: UIStoryboardSegue) {
+    override func viewDidLoad() {
+        tableView.allowsSelection = false;
+    }
+    
+    @IBAction func unwindFromAddKaarten(_ segue: UIStoryboardSegue) {
         switch segue.identifier {
         case "didAddKaart"?:
-            break
+            let addKaartController = segue.source as! AddKaartViewController
+            speler.kaarten.append(addKaartController.kaart!)
+            tableView.insertRows(at: [IndexPath(row: speler.kaarten.count - 1, section: 0)], with: .automatic)
+        case "didEditKaart"?:
+            tableView.reloadRows(at: [indexPathToEdit], with: .automatic)
         default:
             fatalError("Unknown segue")
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        switch segue.identifier {
+            case "editKaart"?:
+                let editController = segue.destination as! AddKaartViewController
+                editController.kaart = speler.kaarten[indexPathToEdit.row]
+                editController.navigationItem.title = "Kaart wijzigen"
+            case "addKaart"?:
+                break
+            default:
+                fatalError("No segue found!")
+        }
     }
 }
 
@@ -31,7 +48,7 @@ extension KaartenViewController: UITableViewDelegate {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {
             (action, view, completionHandler) in
-            self.kaarten.remove(at: indexPath.row)
+            self.speler.kaarten.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             completionHandler(true)
         }
@@ -47,12 +64,12 @@ extension KaartenViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return kaarten.count
+        return speler.kaarten.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "kaartCell", for: indexPath) as! KaartCell
-        cell.kaart = kaarten[indexPath.row]
+        cell.kaart = speler.kaarten[indexPath.row]
         return cell
     }
 }

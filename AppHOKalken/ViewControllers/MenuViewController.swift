@@ -10,10 +10,10 @@ class MenuViewController: UIViewController {
     var speler: Speler!
     
     override func viewDidLoad() {
-        cardsButton.layer.cornerRadius = 10
+        /*cardsButton.layer.cornerRadius = 10
         playerButton.layer.cornerRadius = 10
         goalButton.layer.cornerRadius = 10
-        statisticsButton.layer.cornerRadius = 10
+        statisticsButton.layer.cornerRadius = 10*/
         naamLabel.text = "\(speler.naam), \(speler.voornaam)"
     }
     
@@ -24,7 +24,13 @@ class MenuViewController: UIViewController {
                 infoController.speler = speler
             case "showKaarten"?:
                 let kaartenController = segue.destination as! KaartenViewController
-                kaartenController.kaarten = speler.kaarten
+                kaartenController.speler = speler
+            case "showGoals"?:
+                let goalsController = segue.destination as! GoalsViewController
+                goalsController.speler = speler
+            case "showGraphs"?:
+                let graphsController = segue.destination as! GrafiekenViewController
+                graphsController.speler = speler
             default:
                 fatalError("No segue found")
         }

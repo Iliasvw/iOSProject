@@ -20,4 +20,11 @@ class Goal {
         self.goalType = goalType
         self.omschrijving = omschrijving
     }
+    
+    func formatDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "nl_BE")
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMMMd") // set template after setting locale
+        return dateFormatter.string(from: datum)
+    }
 }

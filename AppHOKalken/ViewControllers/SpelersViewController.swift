@@ -15,6 +15,7 @@ class SpelersViewController: UIViewController {
             } else {
                 spelers[0].addKaart(kaart: Kaart(kaartType: .r, datum: Date(), omschrijving: "Vuile fout"))
             }
+            spelers[0].addGoal(goal: Goal(datum: Date(), goalType: .short, omschrijving: "Mooie goal"))
         }
     }
     
@@ -25,6 +26,7 @@ class SpelersViewController: UIViewController {
         case "editSpeler"?:
             let editController = segue.destination as! AddSpelerViewController
             editController.speler = spelers[indexPathToEdit.row]
+            editController.navigationItem.title = "Speler wijzigen"
         case "spelerMenu"?:
             let menuController = segue.destination as! MenuViewController
             let selection = tableView.indexPathForSelectedRow!

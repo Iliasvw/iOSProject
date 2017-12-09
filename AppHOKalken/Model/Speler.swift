@@ -34,10 +34,10 @@ class Speler {
     }
     
     func geleKaarten() -> [Kaart] {
-        return kaarten.filter { $0.kaartType == Kaart.KaartType.g }
+        return kaarten.filter { $0.kaartType == Kaart.KaartType.g }.sorted { $0.datum < $1.datum }
     }
     
     func rodeKaarten() -> [Kaart] {
-        return kaarten.filter { $0.kaartType == Kaart.KaartType.r }
+        return kaarten.filter { $0.kaartType == Kaart.KaartType.r }.sorted { $0.datum < $1.datum }
     }
 }
