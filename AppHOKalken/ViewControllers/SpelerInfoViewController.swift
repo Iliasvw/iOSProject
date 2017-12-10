@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 class SpelerInfoViewController: UIViewController {
     @IBOutlet weak var nummerLabel: UILabel!

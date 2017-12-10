@@ -7,4 +7,6 @@ target 'AppHOKalken' do
 
   # Pods for AppHOKalken
   pod 'Firebase/Core'
+  pod 'Charts'
+  pod 'Firebase/Auth'
 end

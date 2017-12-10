@@ -17,6 +17,7 @@ class AddGoalViewController: UITableViewController {
             datepicker.setDate(goal.datum, animated: true)
             omschrijvingField.text = goal.omschrijving
         }
+        omschrijvingField.addTarget(self, action: #selector(checkOmschrijving), for: .editingChanged)
     }
     
     @IBAction func save() {
@@ -40,6 +41,18 @@ class AddGoalViewController: UITableViewController {
             goal!.datum = datepicker.date
         default:
             fatalError("Unknown segue")
+        }
+    }
+    
+    @objc func checkOmschrijving() {
+        if let text = omschrijvingField.text {
+            if text.count > 40 {
+                saveButton.isEnabled = false
+            } else {
+                saveButton.isEnabled = true
+            }
+        } else {
+            saveButton.isEnabled = true
         }
     }
 }

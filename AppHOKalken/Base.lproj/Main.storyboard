@@ -34,10 +34,26 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5k-dd-khv">
+                                    <rect key="frame" x="317" y="8" width="50" height="28"/>
+                                    <color key="backgroundColor" red="0.0" green="0.46274509803921571" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="THB-EQ-wp7"/>
+                                    </constraints>
+                                    <state key="normal" title="Reset">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="resetTeam" destination="n2K-0h-2IB" eventType="touchUpInside" id="7gW-bs-vng"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="rWE-9l-qtw" firstAttribute="centerY" secondItem="zYD-H2-erS" secondAttribute="centerY" id="0nz-IK-eFt"/>
+                                <constraint firstAttribute="trailing" secondItem="F5k-dd-khv" secondAttribute="trailing" constant="8" id="Dkz-oY-Kzf"/>
+                                <constraint firstAttribute="bottom" secondItem="F5k-dd-khv" secondAttribute="bottom" constant="8" id="M1m-eW-olD"/>
+                                <constraint firstItem="F5k-dd-khv" firstAttribute="top" secondItem="zYD-H2-erS" secondAttribute="top" constant="8" id="liW-s0-FqG"/>
                                 <constraint firstItem="rWE-9l-qtw" firstAttribute="centerX" secondItem="zYD-H2-erS" secondAttribute="centerX" id="m6J-W3-ykD"/>
                             </constraints>
                         </view>
@@ -111,12 +127,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="resetButton" destination="F5k-dd-khv" id="sN5-NK-ZK8"/>
                         <outlet property="tableView" destination="ugq-43-4EV" id="GCc-2F-238"/>
                         <outlet property="teamnaam" destination="rWE-9l-qtw" id="9Ns-45-9kn"/>
                         <segue destination="hst-pW-rz4" kind="show" identifier="editSpeler" id="xgE-AN-suu"/>
+                        <segue destination="LLj-Fa-5fm" kind="unwind" identifier="didLogout" unwindAction="unwindFromSpelers:" id="cZm-jG-OXG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICe-vw-9NN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LLj-Fa-5fm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="717.60000000000002" y="98.50074962518741"/>
         </scene>
@@ -269,7 +288,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YR8-EU-mbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Kv5-Dz-hZA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="718" y="-642"/>
+            <point key="canvasLocation" x="718" y="-717"/>
         </scene>
         <!--Kaarten-->
         <scene sceneID="UVP-QH-n6d">
@@ -420,7 +439,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Omschrijving" id="PNR-7Q-Zrv">
+                            <tableViewSection headerTitle="Omschrijving - Maximum 40 karakters" id="PNR-7Q-Zrv">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gGS-8G-42j">
                                         <rect key="frame" x="0.0" y="392.5" width="375" height="44"/>
@@ -463,6 +482,7 @@
                         <outlet property="datepicker" destination="5Iu-uC-ttV" id="dJu-14-ecK"/>
                         <outlet property="omschrijvingField" destination="uOU-Gd-ozd" id="VPN-cX-BGq"/>
                         <outlet property="pickerView" destination="cJe-Ls-eE6" id="t5F-KI-y9G"/>
+                        <outlet property="saveButton" destination="eUF-5Q-Jnf" id="Pdq-SG-Pev"/>
                         <segue destination="elk-rM-hpZ" kind="unwind" identifier="didAddKaart" unwindAction="unwindFromAddKaarten:" id="f8v-pI-9g6"/>
                         <segue destination="elk-rM-hpZ" kind="unwind" identifier="didEditKaart" unwindAction="unwindFromAddKaarten:" id="0XP-5R-kpf"/>
                     </connections>
@@ -721,7 +741,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Omschrijving" id="59A-yp-RaI">
+                            <tableViewSection headerTitle="Omschrijving - Maximum 40 karakters" id="59A-yp-RaI">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1k3-eF-rmD">
                                         <rect key="frame" x="0.0" y="392.5" width="375" height="44"/>
@@ -735,6 +755,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="i5f-TQ-A6w" id="AxF-Z1-VOc"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -791,6 +814,9 @@
                                         <state key="normal" title="Goals">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clickGoals" destination="FJG-It-nGW" eventType="touchUpInside" id="3Cg-0K-qJJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gu-6T-qY2">
                                         <rect key="frame" x="189.5" y="0.0" width="169.5" height="30"/>
@@ -798,13 +824,24 @@
                                         <state key="normal" title="Kaarten">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clickKaarten" destination="FJG-It-nGW" eventType="touchUpInside" id="OWd-Hs-aWJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xzj-LO-NLo" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="8" y="112" width="359" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yso-Ky-qAQ" firstAttribute="bottom" secondItem="xzj-LO-NLo" secondAttribute="bottom" constant="8" id="23R-54-E70"/>
+                            <constraint firstItem="xzj-LO-NLo" firstAttribute="top" secondItem="ONx-Io-J1b" secondAttribute="bottom" constant="10" id="Aif-vg-HjN"/>
+                            <constraint firstItem="xzj-LO-NLo" firstAttribute="leading" secondItem="yso-Ky-qAQ" secondAttribute="leading" constant="8" id="FIP-tc-6et"/>
                             <constraint firstItem="ONx-Io-J1b" firstAttribute="leading" secondItem="yso-Ky-qAQ" secondAttribute="leading" constant="8" id="KYJ-fb-NnB"/>
+                            <constraint firstItem="yso-Ky-qAQ" firstAttribute="trailing" secondItem="xzj-LO-NLo" secondAttribute="trailing" constant="8" id="pHk-Sv-MvQ"/>
                             <constraint firstItem="yso-Ky-qAQ" firstAttribute="trailing" secondItem="ONx-Io-J1b" secondAttribute="trailing" constant="8" id="v3Y-tC-Clz"/>
                             <constraint firstItem="ONx-Io-J1b" firstAttribute="top" secondItem="yso-Ky-qAQ" secondAttribute="top" constant="8" id="xQl-Td-bLx"/>
                         </constraints>
@@ -812,6 +849,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Statistieken" id="RsU-BY-gTW"/>
                     <connections>
+                        <outlet property="barChart" destination="xzj-LO-NLo" id="SB8-mf-1wN"/>
                         <outlet property="goalsButton" destination="JNt-Cc-wOh" id="Gqv-IC-dcf"/>
                         <outlet property="kaartenButton" destination="0gu-6T-qY2" id="Cw6-yb-gEp"/>
                     </connections>
@@ -1097,7 +1135,7 @@
                                                     <rect key="frame" x="16" y="11" width="343" height="22"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1123,7 +1161,7 @@
                                                     <rect key="frame" x="16" y="11" width="343" height="22"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1151,8 +1189,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="adresField" destination="qKJ-Wc-y77" id="qE7-KQ-dyB"/>
+                        <outlet property="confirmPasswordField" destination="yeT-hI-vLK" id="UOD-ym-Cqc"/>
                         <outlet property="emailField" destination="oC1-D9-qy2" id="71A-Fq-xaJ"/>
                         <outlet property="naamField" destination="yqX-Ke-cOu" id="hGq-Vx-lyF"/>
+                        <outlet property="passwordField" destination="XSr-Ns-1Eh" id="vtf-EK-t8q"/>
+                        <outlet property="saveButton" destination="bAC-5f-3yW" id="Re4-Oc-OMU"/>
                         <outlet property="websiteField" destination="h2U-FU-F0w" id="Nsr-kq-FPy"/>
                         <segue destination="pQt-c1-IPL" kind="unwind" identifier="didAddTeam" unwindAction="unwindFromAddTeam:" id="DUv-z8-R03"/>
                     </connections>
@@ -1231,7 +1272,7 @@
                                                                 <rect key="frame" x="106.5" y="0.0" width="252.5" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -1249,7 +1290,7 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <state key="normal" title="Log in"/>
                                                                 <connections>
-                                                                    <segue destination="n2K-0h-2IB" kind="show" id="ijm-ta-MRD"/>
+                                                                    <action selector="login" destination="QtY-ai-L8K" eventType="touchUpInside" id="b6C-h9-2dG"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -1314,6 +1355,11 @@
                         <viewLayoutGuide key="safeArea" id="A1a-Td-VAS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="Bmi-fW-Lr6"/>
+                    <connections>
+                        <outlet property="emailField" destination="xiA-N2-83I" id="2ZV-79-IgL"/>
+                        <outlet property="passwordField" destination="LlN-bU-fNO" id="Aiy-3T-lTX"/>
+                        <segue destination="n2K-0h-2IB" kind="show" identifier="showSpelers" id="pj5-7B-Kd7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nnc-fe-d1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 class SpelersViewController: UIViewController {
     var spelers: [Speler] = [Speler(naam: "Van Wassenhove", voornaam: "Ilias", nummer: "4", positie: .v),
@@ -6,8 +7,11 @@ class SpelersViewController: UIViewController {
     private var indexPathToEdit: IndexPath!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var teamnaam: UILabel!
+    @IBOutlet weak var resetButton: UIButton!
     
     override func viewDidLoad() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
+        self.resetButton.layer.cornerRadius = 8
         self.teamnaam.text = "KFC HO Kalken"
         for i in 0...10 {
             if i % 2 == 0 {
@@ -17,6 +21,26 @@ class SpelersViewController: UIViewController {
             }
             spelers[0].addGoal(goal: Goal(datum: Date(), goalType: .short, omschrijving: "Mooie goal"))
         }
+    }
+    
+    @IBAction func resetTeam() {
+        let alert = UIAlertController(title: "Reset team", message: "Bent u zeker dat u alle goals en kaarten van alle spelers wilt verwijderen?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: .`default`, handler: { _ in
+            //reset alles van alle spelers
+            for i in self.spelers {
+                i.goals = []
+                i.kaarten = []
+            }
+        }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Annuleer", comment: "Annuleer"), style: .`default`, handler: { _ in
+            return
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func logout() {
+        try! Auth.auth().signOut()
+        performSegue(withIdentifier: "didLogout", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -32,6 +56,8 @@ class SpelersViewController: UIViewController {
             let selection = tableView.indexPathForSelectedRow!
             menuController.speler = spelers[selection.row]
             tableView.deselectRow(at: selection, animated: true)
+        case "didLogout"?:
+            break
         default:
             fatalError("Unkown segue")
         }

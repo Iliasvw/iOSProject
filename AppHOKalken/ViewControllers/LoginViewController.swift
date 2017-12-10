@@ -1,6 +1,43 @@
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
+    
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    @IBAction func login() {
+        if let email = self.emailField.text, let password = self.passwordField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                if error != nil {
+                    self.showAlert(title: "Ongeldige login", message: "Geen gebruiker gevonden met deze logingegevens.")
+                } else {
+                    self.emailField.text = ""
+                    self.passwordField.text = ""
+                    self.performSegue(withIdentifier: "showSpelers", sender: self)
+                }
+            }
+        } else {
+            self.showAlert(title: "Inloggegevens", message: "Gelieve het e-mailadres en wachtwoord in te vullen.")
+        }
+    }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: .`default`, handler: { _ in
+            return
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func unwindFromSpelers(_ segue: UIStoryboardSegue) {
+        switch segue.identifier {
+        case "didLogout"?:
+            break
+        default:
+            fatalError("Unknown segue")
+        }
+    }
     
     @IBAction func unwindFromAddTeam(_ segue: UIStoryboardSegue) {
         switch segue.identifier {

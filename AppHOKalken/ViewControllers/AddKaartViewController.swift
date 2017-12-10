@@ -4,6 +4,7 @@ class AddKaartViewController: UITableViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var datepicker: UIDatePicker!
     @IBOutlet weak var omschrijvingField: UITextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var kaart: Kaart?
     
@@ -16,6 +17,7 @@ class AddKaartViewController: UITableViewController {
             datepicker.setDate(kaart.datum, animated: true)
             omschrijvingField.text = kaart.omschrijving
         }
+        omschrijvingField.addTarget(self, action: #selector(checkOmschrijving), for: .editingChanged)
     }
     
     @IBAction func save() {
@@ -39,6 +41,18 @@ class AddKaartViewController: UITableViewController {
             kaart!.datum = datepicker.date
         default:
             fatalError("Unknown segue")
+        }
+    }
+    
+    @objc func checkOmschrijving() {
+        if let text = omschrijvingField.text {
+            if text.count > 40 {
+                saveButton.isEnabled = false
+            } else {
+                saveButton.isEnabled = true
+            }
+        } else {
+            saveButton.isEnabled = true
         }
     }
 }
