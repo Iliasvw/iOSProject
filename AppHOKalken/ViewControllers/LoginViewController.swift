@@ -10,15 +10,17 @@ class LoginViewController: UIViewController {
         if let email = self.emailField.text, let password = self.passwordField.text {
             Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
                 if error != nil {
-                    self.showAlert(title: "Ongeldige login", message: "Geen gebruiker gevonden met deze logingegevens.")
+                    if(email.isEmpty || password.isEmpty) {
+                        self.showAlert(title: "Inloggegevens", message: "Gelieve het e-mailadres en wachtwoord in te vullen.")
+                    } else {
+                        self.showAlert(title: "Ongeldige login", message: "Geen gebruiker gevonden met deze logingegevens.")
+                    }
                 } else {
                     self.emailField.text = ""
                     self.passwordField.text = ""
                     self.performSegue(withIdentifier: "showSpelers", sender: self)
                 }
             }
-        } else {
-            self.showAlert(title: "Inloggegevens", message: "Gelieve het e-mailadres en wachtwoord in te vullen.")
         }
     }
     
