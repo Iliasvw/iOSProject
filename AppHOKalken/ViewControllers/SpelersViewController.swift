@@ -1,32 +1,47 @@
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class SpelersViewController: UIViewController {
-    var spelers: [Speler] = [Speler(naam: "Van Wassenhove", voornaam: "Ilias", nummer: "4", positie: .v),
-                             Speler(naam: "Ronaldo", voornaam: "Cristiano", nummer: "7", positie: .a)]
+    var spelers: [Speler]! = []
     private var indexPathToEdit: IndexPath!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var teamnaam: UILabel!
     @IBOutlet weak var resetButton: UIButton!
+    var ref: DatabaseReference!
+    
+    /*
+     let userID = Auth.auth().currentUser!.uid
+     self.ref.child("teams").child(userID).setValue(ploeg!.toDict())
+     */
     
     override func viewDidLoad() {
+        ref = Database.database().reference()
+        let userID = Auth.auth().currentUser!.uid
+        ref.child("teams").child(userID).observe(DataEventType.value, with: { (snapshot) in
+            let teamDict = snapshot.value as? [String : AnyObject] ?? [:]
+            let team = Ploeg.toObject(dict: teamDict)
+            self.teamnaam.text = team.naam
+            self.spelers = team.spelers
+            self.tableView.reloadData()
+        })
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
         self.resetButton.layer.cornerRadius = 8
-        self.teamnaam.text = "KFC HO Kalken"
-        for i in 0...10 {
+        //self.teamnaam.text = "KFC HO Kalken"
+        /*for i in 0...10 {
             if i % 2 == 0 {
                 spelers[0].addKaart(kaart: Kaart(kaartType: .g, datum: Date(), omschrijving: "redelijke fout"))
             } else {
                 spelers[0].addKaart(kaart: Kaart(kaartType: .r, datum: Date(), omschrijving: "Vuile fout"))
             }
             spelers[0].addGoal(goal: Goal(datum: Date(), goalType: .short, omschrijving: "Mooie goal"))
-        }
+        }*/
     }
     
     @IBAction func resetTeam() {
         let alert = UIAlertController(title: "Reset team", message: "Bent u zeker dat u alle goals en kaarten van alle spelers wilt verwijderen?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: .`default`, handler: { _ in
-            //reset alles van alle spelers
+            
             for i in self.spelers {
                 i.goals = []
                 i.kaarten = []

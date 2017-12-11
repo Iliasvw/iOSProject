@@ -1,10 +1,16 @@
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    var ref: DatabaseReference!
+    
+    override func viewDidLoad() {
+        ref = Database.database().reference()
+    }
     
     @IBAction func login() {
         if let email = self.emailField.text, let password = self.passwordField.text {
@@ -38,6 +44,18 @@ class LoginViewController: UIViewController {
             break
         default:
             fatalError("Unknown segue")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+            case "showSpelers"?:
+                //let controller = segue.destination as! SpelersViewController
+                break
+            case "addTeam"?:
+                break
+            default:
+                fatalError("No segue found!")
         }
     }
     

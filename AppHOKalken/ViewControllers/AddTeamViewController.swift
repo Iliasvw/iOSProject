@@ -1,5 +1,6 @@
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class AddTeamViewController: UITableViewController {
     var ploeg: Ploeg?
@@ -11,8 +12,10 @@ class AddTeamViewController: UITableViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
+        ref = Database.database().reference()
         saveButton.isEnabled = false
         websiteField.addTarget(self, action: #selector(checkForm), for: .editingChanged)
         adresField.addTarget(self, action: #selector(checkForm), for: .editingChanged)
@@ -50,6 +53,9 @@ class AddTeamViewController: UITableViewController {
         switch segue.identifier {
         case "didAddTeam"?:
             ploeg = Ploeg(naam: naamField.text!, website: websiteField.text!, adres: adresField.text!, email: emailField.text!)
+            let userID = Auth.auth().currentUser!.uid
+            print("Logged in user: " + userID)
+            self.ref.child("teams").child(userID).setValue(ploeg!.toDict())
         default:
             fatalError("Unknown segue")
         }

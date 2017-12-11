@@ -375,7 +375,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOX-A9-dQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1624.8" y="-644.52773613193403"/>
+            <point key="canvasLocation" x="1625" y="-717"/>
         </scene>
         <!--Nieuwe kaart-->
         <scene sceneID="ydO-ej-yov">
@@ -490,7 +490,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgf-sd-QxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="elk-rM-hpZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2496" y="-643"/>
+            <point key="canvasLocation" x="2497" y="-717"/>
         </scene>
         <!--Menu-->
         <scene sceneID="tne-QT-ifu">
@@ -1332,7 +1332,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Registreer je club"/>
                                         <connections>
-                                            <segue destination="XgA-2O-Mp8" kind="show" id="ULm-sb-SU3"/>
+                                            <segue destination="XgA-2O-Mp8" kind="show" identifier="addTeam" id="ULm-sb-SU3"/>
                                         </connections>
                                     </button>
                                 </subviews>
