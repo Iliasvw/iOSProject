@@ -1,12 +1,19 @@
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class KaartenViewController: UIViewController {
     
     var speler: Speler!
+    var index: Int!
     private var indexPathToEdit: IndexPath!
     @IBOutlet weak var tableView: UITableView!
+    var ref: DatabaseReference!
+    var userID: String!
     
     override func viewDidLoad() {
+        userID = Auth.auth().currentUser!.uid
+        ref = Database.database().reference()
         tableView.allowsSelection = false;
     }
     
@@ -16,8 +23,10 @@ class KaartenViewController: UIViewController {
             let addKaartController = segue.source as! AddKaartViewController
             speler.kaarten.append(addKaartController.kaart!)
             tableView.insertRows(at: [IndexPath(row: speler.kaarten.count - 1, section: 0)], with: .automatic)
+            ref.child("teams").child(userID).child("spelers").child(String(index)).setValue(Ploeg.spelerToDict(speler: self.speler))
         case "didEditKaart"?:
             tableView.reloadRows(at: [indexPathToEdit], with: .automatic)
+            ref.child("teams").child(userID).child("spelers").child(String(index)).setValue(Ploeg.spelerToDict(speler: self.speler))
         default:
             fatalError("Unknown segue")
         }
@@ -50,6 +59,8 @@ extension KaartenViewController: UITableViewDelegate {
             (action, view, completionHandler) in
             self.speler.kaarten.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.ref.child("teams").child(self.userID).child("spelers").child(String(self.index))
+                .setValue(Ploeg.spelerToDict(speler: self.speler))
             completionHandler(true)
         }
         

@@ -1,11 +1,18 @@
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class GoalsViewController: UIViewController {
     var speler: Speler!
+    var index: Int!
     private var indexPathToEdit: IndexPath!
     @IBOutlet weak var tableView: UITableView!
+    var ref: DatabaseReference!
+    var userID: String!
     
     override func viewDidLoad() {
+        userID = Auth.auth().currentUser!.uid
+        ref = Database.database().reference()
         tableView.allowsSelection = false;
     }
     
@@ -27,9 +34,11 @@ class GoalsViewController: UIViewController {
         case "didAddGoal"?:
             let addGoalController = segue.source as! AddGoalViewController
             speler.goals.append(addGoalController.goal!)
-            tableView.insertRows(at: [IndexPath(row: speler.kaarten.count - 1, section: 0)], with: .automatic)
+            tableView.insertRows(at: [IndexPath(row: speler.goals.count - 1, section: 0)], with: .automatic)
+            ref.child("teams").child(userID).child("spelers").child(String(index)).setValue(Ploeg.spelerToDict(speler: self.speler))
         case "didEditGoal"?:
             tableView.reloadRows(at: [indexPathToEdit], with: .automatic)
+            ref.child("teams").child(userID).child("spelers").child(String(index)).setValue(Ploeg.spelerToDict(speler: self.speler))
         default:
             fatalError("Unknown segue")
         }
@@ -49,6 +58,9 @@ extension GoalsViewController: UITableViewDelegate {
             (action, view, completionHandler) in
             self.speler.goals.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            self.ref.child("teams").child(self.userID).child("spelers").child(String(self.index))
+            .setValue(Ploeg.spelerToDict(speler: self.speler))
             completionHandler(true)
         }
         

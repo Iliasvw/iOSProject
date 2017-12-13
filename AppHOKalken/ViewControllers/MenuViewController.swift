@@ -8,12 +8,9 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var naamLabel: UILabel!
     
     var speler: Speler!
+    var index: Int!
     
     override func viewDidLoad() {
-        /*cardsButton.layer.cornerRadius = 10
-        playerButton.layer.cornerRadius = 10
-        goalButton.layer.cornerRadius = 10
-        statisticsButton.layer.cornerRadius = 10*/
         naamLabel.text = "\(speler.naam), \(speler.voornaam)"
     }
     
@@ -21,16 +18,18 @@ class MenuViewController: UIViewController {
         switch segue.identifier {
             case "showInfoSpeler"?:
                 let infoController = segue.destination as! SpelerInfoViewController
-                infoController.speler = speler
+                infoController.speler = self.speler
             case "showKaarten"?:
                 let kaartenController = segue.destination as! KaartenViewController
-                kaartenController.speler = speler
+                kaartenController.speler = self.speler
+                kaartenController.index = self.index
             case "showGoals"?:
                 let goalsController = segue.destination as! GoalsViewController
-                goalsController.speler = speler
+                goalsController.speler = self.speler
+                goalsController.index = self.index
             case "showGraphs"?:
                 let graphsController = segue.destination as! GrafiekenViewController
-                graphsController.speler = speler
+                graphsController.speler = self.speler
             default:
                 fatalError("No segue found")
         }

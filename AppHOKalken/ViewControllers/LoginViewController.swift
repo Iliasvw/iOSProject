@@ -50,8 +50,15 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
             case "showSpelers"?:
-                //let controller = segue.destination as! SpelersViewController
-                break
+                let controller = segue.destination as! SpelersViewController
+                let userID = Auth.auth().currentUser!.uid
+                ref.child("teams").child(userID).observe(DataEventType.value, with: { (snapshot) in
+                    let teamDict = snapshot.value as? [String : AnyObject] ?? [:]
+                    let team = Ploeg.toObject(dict: teamDict)
+                    controller.teamnaam.text = team.naam
+                    controller.spelers = team.spelers
+                    controller.tableView.reloadData()
+                })
             case "addTeam"?:
                 break
             default:
