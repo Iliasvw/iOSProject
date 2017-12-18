@@ -25,7 +25,7 @@ class SpelersViewController: UIViewController {
                 i.goals = []
                 i.kaarten = []
             }
-            self.ref.child("teams").child(self.userID).child("spelers").setValue(Ploeg.spelersToDict(spelers: self.spelers))
+            self.ref.child("teams").child(self.userID).child("spelers").setValue(JSONConverter.spelersToDict(spelers: self.spelers))
         }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("Annuleer", comment: "Annuleer"), style: .`default`, handler: { _ in
             return
@@ -66,10 +66,10 @@ class SpelersViewController: UIViewController {
             let addSpelerController = segue.source as! AddSpelerViewController
             spelers.append(addSpelerController.speler!)
             tableView.insertRows(at: [IndexPath(row: spelers.count - 1, section: 0)], with: .automatic)
-            ref.child("teams").child(userID).child("spelers").setValue(Ploeg.spelersToDict(spelers: self.spelers))
+            ref.child("teams").child(userID).child("spelers").setValue(JSONConverter.spelersToDict(spelers: self.spelers))
         case "didEditSpeler"?:
             tableView.reloadRows(at: [indexPathToEdit], with: .automatic)
-            ref.child("teams").child(userID).child("spelers").setValue(Ploeg.spelersToDict(spelers: self.spelers))
+            ref.child("teams").child(userID).child("spelers").setValue(JSONConverter.spelersToDict(spelers: self.spelers))
         default:
             fatalError("Unkown segue")
         }
@@ -89,7 +89,7 @@ extension SpelersViewController: UITableViewDelegate {
             (action, view, completionHandler) in
             self.spelers.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            self.ref.child("teams").child(self.userID).child("spelers").setValue(Ploeg.spelersToDict(spelers: self.spelers))
+            self.ref.child("teams").child(self.userID).child("spelers").setValue(JSONConverter.spelersToDict(spelers: self.spelers))
             completionHandler(true)
         }
         

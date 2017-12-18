@@ -23,10 +23,10 @@ class KaartenViewController: UIViewController {
             let addKaartController = segue.source as! AddKaartViewController
             speler.kaarten.append(addKaartController.kaart!)
             tableView.insertRows(at: [IndexPath(row: speler.kaarten.count - 1, section: 0)], with: .automatic)
-            ref.child("teams").child(userID).child("spelers").child(String(index)).setValue(Ploeg.spelerToDict(speler: self.speler))
+            ref.child("teams").child(userID).child("spelers").child(String(index)).setValue(JSONConverter.spelerToDict(speler: self.speler))
         case "didEditKaart"?:
             tableView.reloadRows(at: [indexPathToEdit], with: .automatic)
-            ref.child("teams").child(userID).child("spelers").child(String(index)).setValue(Ploeg.spelerToDict(speler: self.speler))
+            ref.child("teams").child(userID).child("spelers").child(String(index)).setValue(JSONConverter.spelerToDict(speler: self.speler))
         default:
             fatalError("Unknown segue")
         }
@@ -60,7 +60,7 @@ extension KaartenViewController: UITableViewDelegate {
             self.speler.kaarten.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             self.ref.child("teams").child(self.userID).child("spelers").child(String(self.index))
-                .setValue(Ploeg.spelerToDict(speler: self.speler))
+                .setValue(JSONConverter.spelerToDict(speler: self.speler))
             completionHandler(true)
         }
         

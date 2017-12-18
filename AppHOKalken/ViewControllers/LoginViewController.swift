@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
                 let userID = Auth.auth().currentUser!.uid
                 ref.child("teams").child(userID).observe(DataEventType.value, with: { (snapshot) in
                     let teamDict = snapshot.value as? [String : AnyObject] ?? [:]
-                    let team = Ploeg.toObject(dict: teamDict)
+                    let team = JSONConverter.toPloegObject(dict: teamDict)
                     controller.teamnaam.text = team.naam
                     controller.spelers = team.spelers
                     controller.tableView.reloadData()

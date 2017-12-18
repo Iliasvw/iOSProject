@@ -35,10 +35,10 @@ class GoalsViewController: UIViewController {
             let addGoalController = segue.source as! AddGoalViewController
             speler.goals.append(addGoalController.goal!)
             tableView.insertRows(at: [IndexPath(row: speler.goals.count - 1, section: 0)], with: .automatic)
-            ref.child("teams").child(userID).child("spelers").child(String(index)).setValue(Ploeg.spelerToDict(speler: self.speler))
+            ref.child("teams").child(userID).child("spelers").child(String(index)).setValue(JSONConverter.spelerToDict(speler: self.speler))
         case "didEditGoal"?:
             tableView.reloadRows(at: [indexPathToEdit], with: .automatic)
-            ref.child("teams").child(userID).child("spelers").child(String(index)).setValue(Ploeg.spelerToDict(speler: self.speler))
+            ref.child("teams").child(userID).child("spelers").child(String(index)).setValue(JSONConverter.spelerToDict(speler: self.speler))
         default:
             fatalError("Unknown segue")
         }
@@ -60,7 +60,7 @@ extension GoalsViewController: UITableViewDelegate {
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             
             self.ref.child("teams").child(self.userID).child("spelers").child(String(self.index))
-            .setValue(Ploeg.spelerToDict(speler: self.speler))
+            .setValue(JSONConverter.spelerToDict(speler: self.speler))
             completionHandler(true)
         }
         

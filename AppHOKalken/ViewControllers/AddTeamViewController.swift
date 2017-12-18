@@ -55,7 +55,7 @@ class AddTeamViewController: UITableViewController {
             ploeg = Ploeg(naam: naamField.text!, website: websiteField.text!, adres: adresField.text!, email: emailField.text!)
             let userID = Auth.auth().currentUser!.uid
             print("Logged in user: " + userID)
-            self.ref.child("teams").child(userID).setValue(ploeg!.toDict())
+            self.ref.child("teams").child(userID).setValue(JSONConverter.toPloegDict(ploeg: ploeg!))
         default:
             fatalError("Unknown segue")
         }

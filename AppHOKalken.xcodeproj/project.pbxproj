@@ -16,6 +16,7 @@
 		6818DF041FDC71E6001675DC /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6818DF031FDC71E6001675DC /* GoalCell.swift */; };
 		6818DF061FDC7DD1001675DC /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6818DF051FDC7DD1001675DC /* AddGoalViewController.swift */; };
 		6818DF081FDC8852001675DC /* GrafiekenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6818DF071FDC8852001675DC /* GrafiekenViewController.swift */; };
+		681A24151FE7F2CC00F95DBA /* JSONConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681A24141FE7F2CC00F95DBA /* JSONConverter.swift */; };
 		6834284A1FB47DE8003BBD1B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683428491FB47DE8003BBD1B /* MenuViewController.swift */; };
 		689601361FDC663F00710A2C /* AddKaartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689601351FDC663F00710A2C /* AddKaartViewController.swift */; };
 		68B984161FD48E9300E863EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68B984151FD48E9300E863EC /* GoogleService-Info.plist */; };
@@ -44,6 +45,7 @@
 		6818DF031FDC71E6001675DC /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 		6818DF051FDC7DD1001675DC /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		6818DF071FDC8852001675DC /* GrafiekenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrafiekenViewController.swift; sourceTree = "<group>"; };
+		681A24141FE7F2CC00F95DBA /* JSONConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONConverter.swift; sourceTree = "<group>"; };
 		681B81FA1FC8B5EE00DF3870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/ilias/Documents/Cursussen & documenten/iOS/AppHOKalken/AppHOKalken/Assets.xcassets"; sourceTree = "<absolute>"; };
 		683428491FB47DE8003BBD1B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		689601351FDC663F00710A2C /* AddKaartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKaartViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 				6818DF031FDC71E6001675DC /* GoalCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		681A24131FE7F2B000F95DBA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				681A24141FE7F2CC00F95DBA /* JSONConverter.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		683428471FB47DD0003BBD1B /* ViewControllers */ = {
@@ -147,6 +157,7 @@
 		68BAA8DF1FB3A53D00D22246 /* AppHOKalken */ = {
 			isa = PBXGroup;
 			children = (
+				681A24131FE7F2B000F95DBA /* Services */,
 				6805BE901FDB2C7D00416AB4 /* Views */,
 				683428481FB47DD7003BBD1B /* Model */,
 				683428471FB47DD0003BBD1B /* ViewControllers */,
@@ -327,6 +338,7 @@
 				68C3ADFA1FDBE66800CC44D4 /* LoginViewController.swift in Sources */,
 				68C3AE061FDBF95700CC44D4 /* KaartCell.swift in Sources */,
 				6805BE981FDB2CC200416AB4 /* Ploeg.swift in Sources */,
+				681A24151FE7F2CC00F95DBA /* JSONConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +481,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppHOKalken/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = be.ivanwassenhove.MyTeam;
+				PRODUCT_BUNDLE_IDENTIFIER = be.ivanwassenhove.AppHOKalken;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -487,7 +499,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AppHOKalken/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = be.ivanwassenhove.MyTeam;
+				PRODUCT_BUNDLE_IDENTIFIER = be.ivanwassenhove.AppHOKalken;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
