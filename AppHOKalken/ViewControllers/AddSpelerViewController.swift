@@ -6,6 +6,7 @@ class AddSpelerViewController: UITableViewController {
     @IBOutlet weak var voornaamField: UITextField!
     @IBOutlet weak var nummerField: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         if let speler = speler {
@@ -14,7 +15,13 @@ class AddSpelerViewController: UITableViewController {
             nummerField.text = speler.nummer
             let statusIndex = Speler.Positie.values.index(of: speler.positie)!
             pickerView.selectRow(statusIndex, inComponent: 0, animated: false)
+        } else {
+            saveButton.isEnabled = false
         }
+        
+        naamField.addTarget(self, action: #selector(checkForm), for: .editingChanged)
+        voornaamField.addTarget(self, action: #selector(checkForm), for: .editingChanged)
+        nummerField.addTarget(self, action: #selector(checkForm), for: .editingChanged)
     }
     
     @IBAction func save() {
@@ -22,6 +29,18 @@ class AddSpelerViewController: UITableViewController {
             performSegue(withIdentifier: "didEditSpeler", sender: self)
         } else {
             performSegue(withIdentifier: "didAddSpeler", sender: self)
+        }
+    }
+    
+    @objc func checkForm() {
+        if let naam = naamField.text, let voornaam = voornaamField.text, let nummer = nummerField.text {
+            if naam.isEmpty || voornaam.isEmpty || nummer.isEmpty {
+                saveButton.isEnabled = false
+            } else {
+                saveButton.isEnabled = true
+            }
+        } else {
+            saveButton.isEnabled = false
         }
     }
     

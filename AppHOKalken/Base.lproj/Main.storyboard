@@ -280,6 +280,7 @@
                         <outlet property="naamField" destination="if3-7t-yjD" id="yat-gq-hAu"/>
                         <outlet property="nummerField" destination="OrA-eU-Lp2" id="73J-g0-pCA"/>
                         <outlet property="pickerView" destination="diq-N7-KjT" id="0I7-cn-VmC"/>
+                        <outlet property="saveButton" destination="uEn-9T-N5F" id="dWv-wu-b9E"/>
                         <outlet property="voornaamField" destination="jsV-09-DWd" id="Gsq-5O-Pra"/>
                         <segue destination="Kv5-Dz-hZA" kind="unwind" identifier="didAddSpeler" unwindAction="unwindFromAddSpeler:" id="qO6-0k-7fb"/>
                         <segue destination="Kv5-Dz-hZA" kind="unwind" identifier="didEditSpeler" unwindAction="unwindFromAddSpeler:" id="8yE-MP-bru"/>

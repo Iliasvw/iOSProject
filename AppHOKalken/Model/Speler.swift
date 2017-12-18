@@ -11,8 +11,9 @@ class Speler {
         case v = "Verdediger"
         case m = "Middenvelder"
         case a = "Aanvaller"
+        case t = "Trainer"
         
-        static let values = [Positie.dm, .v, .m, .a]
+        static let values = [Positie.dm, .v, .m, .a, .t]
     }
     
     var kaarten: [Kaart] = []
