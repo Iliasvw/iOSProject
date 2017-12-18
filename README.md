@@ -1,7 +1,7 @@
 # iOSProject
 
 ## Login
-E-mailadres: kalken@telenet.be <br />
+E-mailadres: test@test.be <br />
 Wachtwoord: 123456
 
 ## Openen in XCode
