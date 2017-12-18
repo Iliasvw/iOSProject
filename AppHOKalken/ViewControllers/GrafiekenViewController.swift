@@ -1,6 +1,10 @@
 import UIKit
 import Charts
 
+/*
+ SOURCE CHARTS: https://github.com/danielgindi/Charts
+*/
+
 class GrafiekenViewController: UIViewController {
     @IBOutlet weak var goalsButton: UIButton!
     @IBOutlet weak var kaartenButton: UIButton!
