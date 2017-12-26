@@ -22,8 +22,7 @@ class LoginViewController: UIViewController {
                         self.showAlert(title: "Ongeldige login", message: "Geen gebruiker gevonden met deze logingegevens.")
                     }
                 } else {
-                    self.emailField.text = ""
-                    self.passwordField.text = ""
+                    self.clearLogin()
                     self.performSegue(withIdentifier: "showSpelers", sender: self)
                 }
             }
@@ -41,6 +40,7 @@ class LoginViewController: UIViewController {
     @IBAction func unwindFromSpelers(_ segue: UIStoryboardSegue) {
         switch segue.identifier {
         case "didLogout"?:
+            self.clearLogin()
             break
         default:
             fatalError("Unknown segue")
@@ -60,6 +60,7 @@ class LoginViewController: UIViewController {
                     controller.tableView.reloadData()
                 })
             case "addTeam"?:
+                self.clearLogin()
                 break
             default:
                 fatalError("No segue found!")
@@ -72,8 +73,14 @@ class LoginViewController: UIViewController {
             let addTeamController = segue.source as! AddTeamViewController
             let team = addTeamController.ploeg!
             print("\(team.naam), \(team.email), \(team.website), \(team.adres)")
+            self.clearLogin()
         default:
             fatalError("Unkown segue")
         }
+    }
+    
+    func clearLogin() {
+        self.emailField.text = ""
+        self.passwordField.text = ""
     }
 }

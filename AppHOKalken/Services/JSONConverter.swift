@@ -41,7 +41,9 @@ class JSONConverter {
         dic["adres"] = ploeg.adres
         dic["email"] = ploeg.email
         
-        dic["spelers"] = JSONConverter.spelersToDict(spelers: ploeg.spelers)
+        if let spelers = ploeg.spelers {
+            dic["spelers"] = JSONConverter.spelersToDict(spelers: spelers)
+        }
         return dic
     }
     

@@ -78,8 +78,11 @@ class AddTeamViewController: UITableViewController {
                 confirmPasswordField.text = ""
             } else {
                 Auth.auth().createUser(withEmail: email, password: pass) { (user, error) in
-                    print("User created!")
-                    self.performSegue(withIdentifier: "didAddTeam", sender: self)
+                    if let _ = error {
+                        self.showAlert(title: "Error!", message: "Er bestaat reeds een gebruiker met dit e-mailadres.")
+                    } else {
+                        self.performSegue(withIdentifier: "didAddTeam", sender: self)
+                    }
                 }
             }
         }
