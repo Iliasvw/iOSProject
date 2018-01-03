@@ -17,6 +17,7 @@ class AddTeamViewController: UITableViewController {
     override func viewDidLoad() {
         ref = Database.database().reference()
         saveButton.isEnabled = false
+        naamField.addTarget(self, action: #selector(checkForm), for: .editingChanged)
         websiteField.addTarget(self, action: #selector(checkForm), for: .editingChanged)
         adresField.addTarget(self, action: #selector(checkForm), for: .editingChanged)
         emailField.addTarget(self, action: #selector(checkForm), for: .editingChanged)
