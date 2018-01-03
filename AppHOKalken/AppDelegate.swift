@@ -9,6 +9,10 @@
 import UIKit
 import Firebase
 
+/*
+ Firebase source: https://firebase.google.com/
+*/
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

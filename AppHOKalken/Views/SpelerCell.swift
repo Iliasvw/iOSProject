@@ -13,12 +13,5 @@ class SpelerCell: UITableViewCell {
             positieLabel.text = speler.positie.rawValue
         }
     }
-    
-    /*override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        if !project.isInvalidated {//kijkt of project nog geldig is
-            colorView.backgroundColor = project.color
-        }
-    }*/
 }
 

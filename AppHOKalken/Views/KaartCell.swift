@@ -18,17 +18,6 @@ class KaartCell: UITableViewCell {
             }
         }
     }
-    
-    /*override func setSelected(_ selected: Bool, animated: Bool) {
-         super.setSelected(selected, animated: animated)
-         if !kaart.isInvalidated {
-            if kaart.kaartType == .g {
-                colorView.backgroundColor = UIColor.red
-            } else {
-                colorView.backgroundColor = UIColor.yellow
-            }
-         }
-    }*/
 }
 
 

@@ -88,6 +88,9 @@ class AddTeamViewController: UITableViewController {
         }
     }
     
+    /*
+     EMAILREGEX SOURCE: https://stackoverflow.com/questions/3139619/check-that-an-email-address-is-valid-on-ios
+     */
     func isValidEmail(testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         
